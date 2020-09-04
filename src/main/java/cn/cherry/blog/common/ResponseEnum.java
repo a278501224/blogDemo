@@ -7,7 +7,8 @@ package cn.cherry.blog.common;
  **/
 public enum ResponseEnum {
     SUCCESS("000000","成功"),
-    FAIL("000001","失败");
+    FAIL("000001","失败"),
+    UNAUTHORIZED("401","访问此资源需要完全身份验证");
 
 
 
