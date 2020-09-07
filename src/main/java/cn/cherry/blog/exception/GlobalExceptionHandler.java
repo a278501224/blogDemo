@@ -5,8 +5,10 @@ import cn.cherry.blog.common.ResponseResult;
 import cn.cherry.blog.common.ResponseUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.ConversionNotSupportedException;
 import org.springframework.beans.TypeMismatchException;
 import org.springframework.http.converter.HttpMessageNotReadableException;
+import org.springframework.http.converter.HttpMessageNotWritableException;
 import org.springframework.validation.FieldError;
 import org.springframework.web.HttpMediaTypeNotAcceptableException;
 import org.springframework.web.HttpRequestMethodNotSupportedException;
@@ -34,8 +36,8 @@ public  class GlobalExceptionHandler {
 
     /**
     * @Description: 运行时异常
-    * @Param: 
-    * @return: 
+    * @Param:
+    * @return:
     */
     @ExceptionHandler(RuntimeException.class)
     public ResponseResult runtimeExceptionHandler(RuntimeException ex){
@@ -151,7 +153,7 @@ public  class GlobalExceptionHandler {
      * @Param:
      * @return:
      */
-    @ExceptionHandler({RuntimeException.class})
+    @ExceptionHandler({ConversionNotSupportedException.class, HttpMessageNotWritableException.class})
     public ResponseResult server500(RuntimeException ex){
         log.info("500...");
         return resultForamt(ResponseEnum.FAIL.getResCode(),ex);
