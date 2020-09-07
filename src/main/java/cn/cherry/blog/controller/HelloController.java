@@ -3,9 +3,8 @@ package cn.cherry.blog.controller;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @description: 调试项目使用
@@ -15,14 +14,15 @@ import org.springframework.web.bind.annotation.RestController;
 @Api(tags = "调试")
 @CrossOrigin(maxAge = 3600)
 @Slf4j
-@RestController("/test")
+@Controller
+@RequestMapping("/demo")
 public class HelloController {
 
 
     @ApiOperation("调试项目启动是否正常")
-    @GetMapping("/hello")
+    @RequestMapping("/hello")
     public String hello(){
         log.info("--------helloworld-------");
-        return "helloworld!";
+        return "demo";
     }
 }
