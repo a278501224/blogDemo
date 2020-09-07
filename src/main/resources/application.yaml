@@ -3,6 +3,11 @@ spring:
     name: my-blog
   profiles:
     active: dev
+  mvc:
+    static-path-pattern: /static/**
+    view:
+      prefix: /templates/
+      suffix: .html
 
 
 logging:
