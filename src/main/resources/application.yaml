@@ -16,3 +16,13 @@ logging:
     dao: debug
     org:
       mybatis: debug
+
+
+#@MP配置
+mybatis-plus:
+  mapper-locations: classpath:mapping/*Mapper.xml
+  type-aliases-package: cn.cherry.blog.domain
+  #查看sql输出日志
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    call-setters-on-nulls: true
