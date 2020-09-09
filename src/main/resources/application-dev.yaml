@@ -3,6 +3,6 @@ server:
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/mytest?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+    url: jdbc:mysql://localhost:3306/my_blog?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
     username: root
     password: 3C34CFC05ACD7BBDA53CA1ACA44D2E51
