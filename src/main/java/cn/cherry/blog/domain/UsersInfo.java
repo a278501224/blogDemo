@@ -6,6 +6,7 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Null;
 import java.util.Date;
 
 /**
@@ -18,12 +19,12 @@ import java.util.Date;
 @TableName(value = "blog_users_info")
 public class UsersInfo {
     @TableId(type = IdType.UUID)
+    @Null
     private String id;
-    @NotEmpty(message = "用户名不能为空")
     private String userName;
-    @NotEmpty(message = "密码不能为空")
     private String userPassword;
     private String userPhone;
+    @NotEmpty
     private String  createdBy;
     private Date createdDate;
     private String updatedBy;

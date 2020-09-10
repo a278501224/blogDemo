@@ -7,6 +7,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Map;
+
 /**
  * @description: 用户信息操作
  * @author: Cherry
@@ -30,5 +32,18 @@ public class UsersInfoServiceImpl implements UsersInfoService {
     public Boolean checkUserName(String userName) {
         Integer row = usersInfoMapper.getCountByUserName(userName);
         return row == 0;
+    }
+
+    @Override
+    public Boolean checkUserPhone(String userPhone) {
+        Integer row = usersInfoMapper.getCountByUserPhone(userPhone);
+        return row == 0;
+    }
+
+    @Override
+    public Boolean editUserInfo(UsersInfo usersInfo) {
+        Integer row = usersInfoMapper.editUserInfo(usersInfo);
+        return row == 1;
+
     }
 }

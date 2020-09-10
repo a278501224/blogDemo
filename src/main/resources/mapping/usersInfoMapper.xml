@@ -7,4 +7,24 @@
         SELECT COUNT(0) FROM blog_users_info WHERE user_name = #{userName}
     </select>
 
+    <!--校验手机号是否存在-->
+    <select id="getCountByUserPhone" resultType="java.lang.Integer">
+        SELECT COUNT(0) FROM blog_users_info WHERE user_phone = #{userPhone}
+    </select>
+
+    <!--修改用户密码-->
+    <update id="editUserInfo" parameterType="cn.cherry.blog.domain.UsersInfo">
+        UPDATE blog_users_info
+        SET
+        <if test="userPassword!=null and userPassword!='' ">
+            user_password = #{userPassword}
+        </if>
+        <if test="userPhone!=null and userpHONE!=''">
+            ,user_phone = #{userPhone}
+        </if>
+            updated_by = #{updatedBy}
+        WHERE
+            user_name = #{userName}
+    </update>
+
 </mapper>
