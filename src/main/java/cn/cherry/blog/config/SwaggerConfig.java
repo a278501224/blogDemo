@@ -21,8 +21,8 @@ public class SwaggerConfig {
     @Bean
     public Docket controllerApi() {
         return new Docket(DocumentationType.SWAGGER_2).apiInfo(new ApiInfoBuilder()
-                .title("我的微博")
-                .description("接口列表")
+                .title("Swagger接口测试文档")
+                .description("后台接口说明")
                 .contact(new Contact("cherry", null, "yichaotang@qq.com"))
                 .version("版本号:1.0")
                 .build())

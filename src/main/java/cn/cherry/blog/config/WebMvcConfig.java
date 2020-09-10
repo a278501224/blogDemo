@@ -30,6 +30,13 @@ public class WebMvcConfig implements WebMvcConfigurer {
         registry.addResourceHandler("swagger-resources/**")
                 .addResourceLocations("classpath:/META-INF/resources/swagger-resources/");
 
+        registry.addResourceHandler("/swagger/**")
+                .addResourceLocations("classpath:/META-INF/resources/swagger*");
+
+        registry.addResourceHandler("/v2/api-docs/**")
+                .addResourceLocations("classpath:/META-INF/resources/v2/api-docs");
+
+
         //将所有/static/** 访问都映射到classpath:/static/ 目录下
 //        registry.addResourceHandler("/static/**").addResourceLocations(ResourceUtils.CLASSPATH_URL_PREFIX +"/static/");
     }
